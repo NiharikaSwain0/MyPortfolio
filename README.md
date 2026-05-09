@@ -1,65 +1,91 @@
-# ✨ Futuristic Portfolio – Niharika Swain
+# 🚀 Modern Portfolio | Niharika Swain
 
-> A sleek, futuristic, and fully responsive personal portfolio crafted with modern web technologies, immersive animations, and glass-morphism aesthetics.
+<div align="center">
 
-![Portfolio Banner](portfolio-image.png)
+### ✨ A Modern Developer Portfolio ✨
 
----
+Designed with glassmorphism, neon aesthetics, smooth animations, and responsive UI for a premium digital experience.
 
-## 🌌 Overview
-
-Welcome to my digital universe 🚀  
-This portfolio represents my journey as a developer, showcasing my projects, technical skills, achievements, certifications, and passion for creating visually stunning and functional web experiences.
-
-Designed with a futuristic UI/UX approach, this website combines elegant animations, neon-glow aesthetics, interactive effects, and smooth responsiveness to create a premium browsing experience.
+</div>
 
 ---
 
-## 🔥 Live Features
+## 🌌 Preview
 
-✨ **Glass-morphism UI Design**  
-⚡ **Interactive Particle Background**  
-🌙 **Dark / Light Theme Toggle**  
-⌨️ **Dynamic Typing Animation**  
-📱 **Fully Responsive Layout**  
-🎯 **Scroll Reveal Animations**  
-💫 **Mouse Glow Interaction**  
-📧 **Google Sheets Integrated Contact Form**  
-🚀 **Smooth Navigation & Modern UI**
+![Portfolio Preview](MyPortfolio-image.png)
 
 ---
 
-## 🛠️ Tech Stack
+# ✨ About The Project
 
-### 💻 Frontend
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+This is my personal portfolio website built to showcase my:
 
-### 🎨 UI & Styling
-- Glass-morphism Design
-- CSS Animations
-- Flexbox & CSS Grid
-- Responsive Media Queries
+- 💻 Technical Skills
+- 🚀 Projects
+- 🎓 Education
+- 📜 Certifications
+- 📧 Contact Information
 
-### 🌐 Integrations
-- Google Apps Script
-- Google Sheets API
+The portfolio combines modern UI/UX trends like:
 
-### 🔗 Libraries & Resources
-- Font Awesome
-- Google Fonts
+- Glassmorphism
+- Neon Glow Effects
+- Animated Backgrounds
+- Responsive Layouts
+- Smooth Scrolling Animations
+
+to create an immersive and professional web experience.
 
 ---
 
-## 📂 Project Structure
+# 🔥 Features
+
+## 🌙 Modern UI/UX
+- Modern dark theme
+- Neon gradient effects
+- Interactive glowing elements
+
+## 📱 Fully Responsive
+- Mobile friendly
+- Tablet optimized
+- Desktop optimized
+
+## ⚡ Interactive Effects
+- Particle background
+- Typing text animation
+- Hover glow effects
+- Scroll reveal animations
+
+## 📧 Smart Contact Form
+Integrated with Google Sheets using Google Apps Script for real-time message storage.
+
+## 🎨 Theme Toggle
+Switch between dark and light mode seamlessly.
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| HTML5 | Website Structure |
+| CSS3 | Styling & Animations |
+| JavaScript | Functionality & Effects |
+| Font Awesome | Icons |
+| Google Fonts | Typography |
+| Google Apps Script | Contact Form Backend |
+
+---
+
+# 📂 Folder Structure
 
 ```bash
-📁 MyPortfolio
+📦 MyPortfolio
  ┣ 📄 index.html
  ┣ 📄 style.css
  ┣ 📄 script.js
+ ┣ 📄 README.md
  ┣ 📁 assets
  ┃ ┣ 📷 portfolio-image.png
- ┃ ┗ 📷 other-images
- ┗ 📄 README.md
+ ┃ ┣ 📷 certificates
+ ┃ ┗ 📷 project-images
