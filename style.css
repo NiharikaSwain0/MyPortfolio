@@ -530,6 +530,34 @@ main {
     margin-bottom: 0.8rem;
 }
 
+.project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--secondary-accent);
+    border-color: var(--secondary-accent);
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+}
+
 .project-card p {
     color: #94a3b8;
     font-size: 0.95rem;
