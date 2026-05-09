@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niharika Swain | Futuristic Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+    <div id="mouse-glow"></div>
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+
+    <header id="header">
+        <nav>
+            <div class="logo">Niharika</div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-text">
+                <h2>Hello, I am</h2>
+                <h1>NIHARIKA SWAIN</h1>
+                <div class="role-container">
+                    <span id="typing-text"></span><span class="cursor">|</span>
+                </div>
+                <p class="subtitle">B.Tech Data Science student bridging the gap between raw data and impactful software solutions with a futuristic approach.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="NIHARIKA SWAIN 1.docx" download class="btn btn-secondary"><i class="fas fa-download"></i> Resume</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image">
+                    <img src="Niharika-Neha.jpeg" alt="Niharika Swain">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section reveal">
+            <h2 class="section-title"><span>About Me</span></h2>
+            <div class="about-container">
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <img src="Niharika-Neha.jpeg" alt="Niharika Swain">
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <p>Detail-oriented B.Tech Data Science student with strong expertise in Python, SQL, Java, and data analysis. I specialize in building scalable applications and developing data-driven solutions with a focus on modern AI fundamentals. Seeking opportunities in Data Analyst, Data Scientist, and Software Development roles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section reveal">
+            <h2 class="section-title"><span>Education</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card">
+                        <div class="timeline-header">
+                            <h3>Galgotias University</h3>
+                            <span class="timeline-date">Sep 2024 – Jul 2028</span>
+                        </div>
+                        <p>B.Tech in CSE (Data Science) — CGPA: 8.6</p>
+                        <small>Greater Noida, India</small>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card">
+                        <div class="timeline-header">
+                            <h3>CHSE Board (Class XII)</h3>
+                            <span class="timeline-date">2023 – 2024</span>
+                        </div>
+                        <p>Higher Secondary Education</p>
+                        <small>Cuttack, Odisha</small>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card">
+                        <div class="timeline-header">
+                            <h3>BSE Board (Class X)</h3>
+                            <span class="timeline-date">2021 – 2022</span>
+                        </div>
+                        <p>Secondary Education</p>
+                        <small>Cuttack, Odisha</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section reveal">
+            <h2 class="section-title"><span>Technical Skills</span></h2>
+            <div class="skills-grid">
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="tech-stack">
+                        <div class="tech-badge"><i class="fab fa-python"></i> Python</div>
+                        <div class="tech-badge"><i class="fab fa-java"></i> Java</div>
+                        <div class="tech-badge">C</div>
+                        <div class="tech-badge"><i class="fas fa-database"></i> SQL</div>
+                    </div>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Data Science & Analytics</h3>
+                    <div class="tech-stack">
+                        <div class="tech-badge"><i class="fas fa-chart-pie"></i> Pandas</div>
+                        <div class="tech-badge"><i class="fas fa-microchip"></i> NumPy</div>
+                        <div class="tech-badge"><i class="fas fa-chart-bar"></i> Matplotlib</div>
+                        <div class="tech-badge"><i class="fas fa-wave-square"></i> Seaborn</div>
+                    </div>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web & App Development</h3>
+                    <div class="tech-stack">
+                        <div class="tech-badge"><i class="fab fa-html5"></i> HTML</div>
+                        <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+                        <div class="tech-badge"><i class="fab fa-js"></i> JavaScript</div>
+                        <div class="tech-badge"><i class="fab fa-android"></i> Android Development</div>
+                    </div>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-server"></i> Database Management</h3>
+                    <div class="tech-stack">
+                        <div class="tech-badge"><i class="fas fa-database"></i> MySQL</div>
+                        <div class="tech-badge"><i class="fas fa-fire"></i> Firebase</div>
+                    </div>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-brain"></i> Core Concepts</h3>
+                    <div class="tech-stack">
+                        <div class="tech-badge">DSA</div>
+                        <div class="tech-badge">OOP</div>
+                        <div class="tech-badge">DBMS</div>
+                    </div>
+                </div>
+                <div class="glass-card skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="tech-stack">
+                        <div class="tech-badge"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="tech-badge"><i class="fab fa-github"></i> GitHub</div>
+                        <div class="tech-badge">VS Code</div>
+                        <div class="tech-badge"><i class="fas fa-mobile-alt"></i> Android Studio</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section reveal">
+            <h2 class="section-title"><span>PROJECTS</span></h2>
+            <div class="projects-grid">
+                <div class="glass-card project-card">
+                    <div class="project-preview">
+                        <img src="KisanSetu-image.jpeg" alt="KisanSetu">
+                    </div>
+                    <h3>KisanSetu</h3>
+                    <p>Direct Farmer-to-Consumer platform built with Firebase and Android Studio. Optimizing supply chains with real-time data.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Android</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                </div>
+                <div class="glass-card project-card">
+                    <div class="project-preview">
+                        <img src="Online Exam.png" alt="Online Examination System">
+                    </div>
+                    <h3>Online Examination System</h3>
+                    <p>Role-based web system for automated evaluation and result processing with secure authentication.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Web Dev</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                </div>
+                <div class="glass-card project-card">
+                    <div class="project-preview">
+                        <img src="portfolio-image.png" alt="Portfolio Website">
+                    </div>
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive personal portfolio using HTML, CSS, JS.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section reveal">
+            <h2 class="section-title"><span>Certifications</span></h2>
+            <div class="certifications-container">
+                <div class="glass-card cert-item">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-info">
+                        <h3>Oracle Academy – Database Design</h3>
+                        <p>Professional database architecture and management certification.</p>
+                    </div>
+                </div>
+                <div class="glass-card cert-item">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-info">
+                        <h3>Java for Beginners</h3>
+                        <p>Foundational programming in Java language and logic.</p>
+                    </div>
+                </div>
+                <div class="glass-card cert-item">
+                    <div class="cert-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="cert-info">
+                        <h3>GUVI – Data Structures and Algorithms using C</h3>
+                        <p>Advanced algorithmic problem solving and memory management.</p>
+                    </div>
+                </div>
+                <div class="glass-card cert-item">
+                    <div class="cert-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="cert-info">
+                        <h3>IIT Madras – Design Thinking: A Primer</h3>
+                        <p>NPTEL certification on creative problem-solving and user-centric design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section reveal">
+            <h2 class="section-title"><span>Get In Touch</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <a href="mailto:niharikaswain750@gmail.com" class="glass-card contact-method">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p>Email Me</p>
+                            <small>niharikaswain750@gmail.com</small>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/niharika-swain-53204a32a/" target="_blank" class="glass-card contact-method">
+                        <div class="icon-box"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <p>LinkedIn</p>
+                            <small>Niharika Swain</small>
+                        </div>
+                    </a>
+                    <a href="https://github.com/NiharikaSwain0" target="_blank" class="glass-card contact-method">
+                        <div class="icon-box"><i class="fab fa-github"></i></div>
+                        <div>
+                            <p>GitHub</p>
+                            <small>@NiharikaSwain0</small>
+                        </div>
+                    </a>
+                    <a href="https://leetcode.com/u/Niharika560/" target="_blank" class="glass-card contact-method">
+                        <div class="icon-box"><i class="fas fa-code"></i></div>
+                        <div>
+                            <p>LeetCode</p>
+                            <small>@Niharika560</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="glass-card">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Send Transmission</button>
+                    </form>
+                    <div id="form-status" style="margin-top: 1rem; text-align: center; display: none;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <p class="tagline">Niharika Swain | <span class="highlight">Aspiring</span> Data Scientist</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
