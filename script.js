@@ -90,10 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Mouse Glow Effect
     const mouseGlow = document.getElementById('mouse-glow');
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
+
     document.addEventListener('mousemove', (e) => {
-        mouseGlow.style.left = e.clientX + 'px';
-        mouseGlow.style.top = e.clientY + 'px';
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
+
+    function animateGlow() {
+        const dx = mouseX - glowX;
+        const dy = mouseY - glowY;
+        
+        glowX += dx * 0.1;
+        glowY += dy * 0.1;
+
+        mouseGlow.style.left = glowX + 'px';
+        mouseGlow.style.top = glowY + 'px';
+        
+        requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
 
     // 3. Typing Animation
     const typingText = document.getElementById('typing-text');
@@ -239,4 +256,222 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 7. Certificate 3D Circular Gallery Logic
+    const certStack = document.getElementById('main-cert-stack');
+    const certLibraryItems = document.querySelectorAll('#cert-library .cert-item');
+    const certModal = document.getElementById('cert-modal');
+    const modalCircle = document.getElementById('modal-circle');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Full Viewer Elements
+    const fullViewer = document.getElementById('full-cert-viewer');
+    const viewerImg = document.getElementById('viewer-img');
+    const viewerTitle = document.getElementById('viewer-title');
+    const viewerDesc = document.getElementById('viewer-desc');
+    const closeViewer = document.querySelector('.close-viewer');
+    const viewerPrev = document.getElementById('viewer-prev');
+    const viewerNext = document.getElementById('viewer-next');
+
+    let rotationY = 0;
+    let autoRotateInterval;
+    let isDragging = false;
+    let startX;
+    let currentViewerIndex = 0;
+    let walkSum = 0;
+
+    function createCertCircle() {
+        if (!modalCircle) return;
+        modalCircle.innerHTML = '';
+        const count = certLibraryItems.length;
+        
+        let radius;
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 480) radius = 220;
+        else if (screenWidth < 768) radius = 350;
+        else radius = 500;
+
+        const angleStep = 360 / count;
+
+        certLibraryItems.forEach((item, index) => {
+            const src = item.getAttribute('data-src');
+            const title = item.getAttribute('data-title');
+            const desc = item.getAttribute('data-desc');
+
+            const card = document.createElement('div');
+            card.className = 'modal-cert-card';
+            
+            const angle = index * angleStep;
+            const baseTransform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+            card.style.transform = baseTransform;
+            card.style.setProperty('--base-transform', baseTransform);
+            
+            card.innerHTML = `
+                <img src="${src}" alt="${title}">
+                <div class="modal-cert-info">
+                    <h4>${title}</h4>
+                    <p>${desc}</p>
+                </div>
+            `;
+
+            card.addEventListener('click', (e) => {
+                if (Math.abs(walkSum) > 5) return;
+                openFullViewer(index);
+            });
+
+            modalCircle.appendChild(card);
+        });
+    }
+
+    function startAutoRotate() {
+        stopAutoRotate();
+        autoRotateInterval = setInterval(() => {
+            rotationY -= 0.2;
+            modalCircle.style.transform = `rotateY(${rotationY}deg)`;
+        }, 20);
+    }
+
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+
+    // Spin logic
+    if (certModal) {
+        certModal.addEventListener('mousemove', (e) => {
+            if (!certModal.classList.contains('active')) return;
+
+            // Spin logic
+            if (isDragging) {
+                const x = e.pageX;
+                const walk = (x - startX) * 0.2;
+                rotationY += walk;
+                walkSum += Math.abs(walk);
+                modalCircle.style.transform = `rotateY(${rotationY}deg)`;
+                startX = x;
+            }
+        });
+
+        certModal.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.modal-cert-card')) return;
+            isDragging = true;
+            startX = e.pageX;
+            walkSum = 0;
+            stopAutoRotate();
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                startAutoRotate();
+            }
+        });
+
+        // Touch support
+        certModal.addEventListener('touchstart', (e) => {
+            if (e.target.closest('.modal-cert-card')) return;
+            isDragging = true;
+            startX = e.touches[0].pageX;
+            walkSum = 0;
+            stopAutoRotate();
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX;
+            const walk = (x - startX) * 0.2;
+            rotationY += walk;
+            walkSum += Math.abs(walk);
+            modalCircle.style.transform = `rotateY(${rotationY}deg)`;
+            startX = x;
+        });
+
+        window.addEventListener('touchend', () => {
+            if (isDragging) {
+                isDragging = false;
+                startAutoRotate();
+            }
+        });
+    }
+
+    function openCertModal() {
+        createCertCircle();
+        certModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        header.style.display = 'none'; // Hide header
+        rotationY = 0;
+        modalCircle.style.transform = `rotateY(0deg)`;
+        startAutoRotate();
+    }
+
+    function closeCertModal() {
+        certModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        header.style.display = 'block'; // Show header
+        stopAutoRotate();
+    }
+
+    function openFullViewer(index) {
+        currentViewerIndex = index;
+        const item = certLibraryItems[currentViewerIndex];
+        const src = item.getAttribute('data-src');
+        const title = item.getAttribute('data-title');
+        const desc = item.getAttribute('data-desc');
+
+        viewerImg.style.opacity = '0';
+        setTimeout(() => {
+            viewerImg.src = src;
+            viewerTitle.textContent = title;
+            viewerDesc.textContent = desc;
+            viewerImg.style.opacity = '1';
+        }, 200);
+
+        fullViewer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        stopAutoRotate();
+    }
+
+    function closeFullViewer() {
+        fullViewer.classList.remove('active');
+        if (certModal.classList.contains('active')) {
+            startAutoRotate();
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    function navigateViewer(direction) {
+        const count = certLibraryItems.length;
+        currentViewerIndex = (currentViewerIndex + direction + count) % count;
+        openFullViewer(currentViewerIndex);
+    }
+
+    if (viewerPrev) viewerPrev.addEventListener('click', () => navigateViewer(-1));
+    if (viewerNext) viewerNext.addEventListener('click', () => navigateViewer(1));
+    if (certStack) certStack.addEventListener('click', openCertModal);
+    if (closeModal) closeModal.addEventListener('click', closeCertModal);
+    if (closeViewer) closeViewer.addEventListener('click', closeFullViewer);
+
+    if (certModal) {
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) closeCertModal();
+        });
+    }
+
+    if (fullViewer) {
+        fullViewer.addEventListener('click', (e) => {
+            if (e.target === fullViewer) closeFullViewer();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (fullViewer.classList.contains('active')) {
+            if (e.key === 'Escape') closeFullViewer();
+            if (e.key === 'ArrowRight') navigateViewer(1);
+            if (e.key === 'ArrowLeft') navigateViewer(-1);
+            return;
+        }
+        if (certModal.classList.contains('active')) {
+            if (e.key === 'Escape') closeCertModal();
+        }
+    });
 });

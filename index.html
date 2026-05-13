@@ -35,8 +35,12 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
+        <section id="hero" class="hero reveal">
             <div class="hero-text">
+                <div class="availability-badge">
+                    <span class="status-dot"></span>
+                    Available for Internships
+                </div>
                 <h2>Hello, I am</h2>
                 <h1>NIHARIKA SWAIN</h1>
                 <div class="role-container">
@@ -216,37 +220,63 @@
 
         <section id="certifications" class="section reveal">
             <h2 class="section-title"><span>Certifications</span></h2>
-            <div class="certifications-container">
-                <div class="glass-card cert-item">
-                    <div class="cert-icon"><i class="fas fa-award"></i></div>
-                    <div class="cert-info">
-                        <h3>Oracle Academy – Database Design</h3>
-                        <p>Professional database architecture and management certification.</p>
-                    </div>
-                </div>
-                <div class="glass-card cert-item">
-                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <div class="cert-info">
-                        <h3>Java for Beginners</h3>
-                        <p>Foundational programming in Java language and logic.</p>
-                    </div>
-                </div>
-                <div class="glass-card cert-item">
-                    <div class="cert-icon"><i class="fas fa-microchip"></i></div>
-                    <div class="cert-info">
-                        <h3>GUVI – Data Structures and Algorithms using C</h3>
-                        <p>Advanced algorithmic problem solving and memory management.</p>
-                    </div>
-                </div>
-                <div class="glass-card cert-item">
-                    <div class="cert-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="cert-info">
-                        <h3>IIT Madras – Design Thinking: A Primer</h3>
-                        <p>NPTEL certification on creative problem-solving and user-centric design.</p>
+            <div class="cert-stack-container">
+                <div class="cert-stack" id="main-cert-stack">
+                    <div class="stack-card card-3"><img src="img/c.jpeg" alt="Certificate 3"></div>
+                    <div class="stack-card card-2"><img src="img/javaC.jpeg" alt="Certificate 2"></div>
+                    <div class="stack-card card-1">
+                        <img src="img/oracle.jpeg" alt="Certificate 1">
+                        <div class="stack-overlay">
+                            <i class="fas fa-certificate"></i>
+                            <h3>My Certifications</h3>
+                            <p>Click to view all 11 certificates</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Certificate Data Source -->
+            <div id="cert-library" style="display: none;">
+                <div class="cert-item" data-src="img/oracle.jpeg" data-title="Oracle Academy" data-desc="Database Design"></div>
+                <div class="cert-item" data-src="img/javaC.jpeg" data-title="Java for Beginners" data-desc="Foundational Programming"></div>
+                <div class="cert-item" data-src="img/c.jpeg" data-title="GUVI" data-desc="DSA using C"></div>
+                <div class="cert-item" data-src="img/nptel.jpeg" data-title="IIT Madras (NPTEL)" data-desc="Design Thinking"></div>
+                <div class="cert-item" data-src="img/sql.jpeg" data-title="SQL" data-desc="Database Management"></div>
+                <div class="cert-item" data-src="img/oops.jpeg" data-title="OOPS" data-desc="Object Oriented Programming"></div>
+                <div class="cert-item" data-src="img/dsa.jpeg" data-title="DSA" data-desc="Data Structures & Algorithms"></div>
+                <div class="cert-item" data-src="img/nvdia.jpeg" data-title="NVIDIA" data-desc="AI & Deep Learning"></div>
+                <div class="cert-item" data-src="img/jsp.jpeg" data-title="JSP" data-desc="Java Server Pages"></div>
+                <div class="cert-item" data-src="img/computational.jpeg" data-title="Computational Thinking" data-desc="Problem Solving"></div>
+                <div class="cert-item" data-src="img/wie.jpeg" data-title="WIE" data-desc="Women in Engineering"></div>
+            </div>
         </section>
+
+        <!-- 3D Circular Gallery Modal -->
+        <div id="cert-modal" class="modal">
+            <div class="modal-header">
+                <h3>Certifications</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-content-circle">
+                <div id="modal-circle" class="modal-circle">
+                    <!-- Certificates will be arranged in a 3D circle here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Full-Screen Certificate Viewer -->
+        <div id="full-cert-viewer" class="full-viewer">
+            <span class="close-viewer">&times;</span>
+            <button id="viewer-prev" class="viewer-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="viewer-content">
+                <img id="viewer-img" src="" alt="Certificate Detail">
+                <div class="viewer-info">
+                    <h3 id="viewer-title"></h3>
+                    <p id="viewer-desc"></p>
+                </div>
+            </div>
+            <button id="viewer-next" class="viewer-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
 
         <section id="contact" class="section reveal">
             <h2 class="section-title"><span>Get In Touch</span></h2>
